@@ -1,0 +1,15 @@
+{
+  "name": "React-Svg-Loader",
+  "version": "0.0.0",
+  "description": "A react component for loading and styling svgs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "svg"
+  ],
+  "author": "Jem <jzyerror54+npm@gmail.com> (http://jemyoung.com/)",
+  "license": "MIT"
+}
