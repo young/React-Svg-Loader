@@ -11,5 +11,9 @@
     "svg"
   ],
   "author": "Jem <jzyerror54+npm@gmail.com> (http://jemyoung.com/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "superagent": "^1.2.0",
+    "object-assign": "^3.0.0"
+  }
 }
