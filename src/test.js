@@ -1,7 +1,9 @@
 var SvgLoader = window.SvgLoader;
+
+var superagent = require('superagent');
 var Foo = React.createClass({
 	render: function() {
-		return (<SvgLoader>adjkjdajdjda</SvgLoader>);
+		return (<SvgLoader fill='#11E11E'/>);
 	}
 });
 
