@@ -1,8 +1,8 @@
 "use strict";
 
-// var React = require('react');
 var PropTypes = React.PropTypes;
 var assign = require('object-assign');
+var request = require('superagent');
 
 var pinActive =
   <svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +14,7 @@ var pinActive =
           </g>
       </g>
   </svg>;
-
+var fooo;
 var SvgLoader = React.createClass({
   propTypes: {
     state: PropTypes.string,
@@ -33,12 +33,28 @@ var SvgLoader = React.createClass({
     }
     return item;
   },
+  componentWillMount(p, s) {
+    this._getExternalSvg(this.props.url);
+  },
+  getInitialState() {
+    return {foo: this.props.url}
+  },
+  _getExternalSvg(url) {
+    request
+    .get(url)
+    .end(function(err, res){
+      debugger;
+      this.setState({foo: res.text});
+    }.bind(this))
+    // NOTE: use yield
+  },
   render() {
+    debugger;
     var p = this.props;
-    var svgEl = pinActive;
+    var svgEl = React.createElement('svg', this.state.foo) || {};
     var styles = assign({}, p.styles);
-    var props = assign({}, svgEl.props, {style: styles}, this._cleanProps({stroke: p.stroke, fill: p.fill, height: p.height, width: p.width}));
-    return React.createElement('svg', props);
+    var propss = assign({}, svgEl.props, {style: styles}, this._cleanProps({stroke: p.stroke, fill: p.fill, height: p.height, width: p.width}));
+    return React.createElement('svg', propss);
   }
 });
 

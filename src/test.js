@@ -1,10 +1,10 @@
-var SvgLoader = window.SvgLoader;
+var SvgLoader = require('./svg-loader');
 
-var superagent = require('superagent');
-var Foo = React.createClass({
+var Test = React.createClass({
 	render: function() {
-		return (<SvgLoader fill='#11E11E'/>);
+		return (<SvgLoader fill='#11E11E' url='http://127.0.0.1:8080/foo.svg'/>);
 	}
 });
 
-React.render(<Foo />, document.getElementById('test'));
+
+React.render(<Test />, document.getElementById('bar'));
