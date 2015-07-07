@@ -3,6 +3,7 @@
 var PropTypes = React.PropTypes;
 var assign = require('object-assign');
 var request = require('superagent');
+var jsx = require('jsx-transform');
 
 var pinActive =
   <svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +46,8 @@ var SvgLoader = React.createClass({
     .end(function(err, res){
       var el = document.createElement('div');
       el.innerHtml = res.text;
-      this.setState({foo: el});
+      el = jsx.fromString(el, {factory: React.createElement});
+     this.setState({foo: el});
     }.bind(this))
     // NOTE: use yield
   },

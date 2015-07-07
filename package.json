@@ -14,6 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "superagent": "^1.2.0",
-    "object-assign": "^3.0.0"
+    "object-assign": "^3.0.0",
+    "jsx-transform": "^2.2.1"
   }
 }
