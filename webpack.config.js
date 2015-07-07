@@ -1,3 +1,4 @@
+require('jsx-loader');
 module.exports = {
     entry: "./src/test.js",
     output: {

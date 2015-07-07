@@ -47,14 +47,14 @@ var SvgLoader = React.createClass({
       var el = document.createElement('div');
       el.innerHtml = res.text;
       el = jsx.fromString(el, {factory: React.createElement});
-     this.setState({foo: el});
+      this.setState({foo: el});
     }.bind(this))
     // NOTE: use yield
   },
   render() {
     debugger;
     var p = this.props;
-    var svgEl = this.state.foo && React.createElement('span', {}, this.state.foo)|| {};
+    // var svgEl = this.state.foo && React.createElement('span', {}, this.state.foo)|| {};
     var styles = assign({}, p.styles);
     var propss = assign({}, svgEl.props, {style: styles}, this._cleanProps({stroke: p.stroke, fill: p.fill, height: p.height, width: p.width}));
     return React.createElement('svg', propss);

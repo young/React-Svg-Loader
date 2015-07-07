@@ -16,5 +16,8 @@
     "superagent": "^1.2.0",
     "object-assign": "^3.0.0",
     "jsx-transform": "^2.2.1"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.13.2"
   }
 }
