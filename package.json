@@ -4,7 +4,8 @@
   "description": "A react component for loading and styling svgs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server --cors"
   },
   "keywords": [
     "react",
@@ -13,7 +14,6 @@
   "author": "Jem <jzyerror54+npm@gmail.com> (http://jemyoung.com/)",
   "license": "MIT",
   "dependencies": {
-    "superagent": "^1.2.0",
     "object-assign": "^3.0.0",
     "jsx-transform": "^2.2.1"
   },

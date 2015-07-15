@@ -2,7 +2,7 @@
 
 var PropTypes = React.PropTypes;
 var assign = require('object-assign');
-var request = require('superagent');
+
 var jsx = require('jsx-transform');
 
 var pinActive =
@@ -41,9 +41,9 @@ var SvgLoader = React.createClass({
     return {foo: undefined}
   },
   _getExternalSvg(url) {
-    request
-    .get(url)
-    .end(function(err, res){
+    const request = new Request(url);
+    fetch(request)
+    .then(function(res) {
       var el = document.createElement('div');
       el.innerHtml = res.text;
       el = jsx.fromString(el, {factory: React.createElement});
